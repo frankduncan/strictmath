@@ -1,0 +1,11 @@
+Much of the code was lifted from Evita Common Lisp, which is licensed
+under the Apache2 License.  Please see for more information:
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+That code, and other code, is a direct translation from fdlibm, which
+is licensed under the MPL version 1.1.  Please see for more information:
+
+    http://www.mozilla.org/MPL/
+
+Anything else is copyright 2016 Frank Duncan, also under the Apache2 License.

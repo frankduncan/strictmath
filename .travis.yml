@@ -1,0 +1,6 @@
+before_install:
+  - wget http://frank.kank.net/travissbcl/strictmath/b9787e5/$(git rev-parse HEAD)/travissbcl
+  - chmod +x travissbcl
+
+script:
+  - ./travissbcl --script bin/travis.lisp
