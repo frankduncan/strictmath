@@ -1,8 +1,10 @@
 (setf *compile-print* nil)
 (require 'asdf)
-(setf asdf:*central-registry* (list #p"deps/"))
-(asdf:load-system :strictmath.internal)
-(asdf:load-system :strictmath-test.internal)
+(asdf:initialize-source-registry `(:source-registry (:tree ,(car (directory "src"))) :INHERIT-CONFIGURATION))
+(asdf:load-system :strictmath)
+(asdf:load-system :strictmath-test)
+#-travis(asdf:load-system :style-checker)
+#-travis(asdf:load-system :docgen)
 
 (format t "~%~c[1;33mRunning Tests~c[0m~%" #\Esc #\Esc)
 (when (not (strictmath-test:run-all-tests))

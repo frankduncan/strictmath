@@ -1,5 +1,5 @@
 before_install:
-  - wget http://frank.kank.net/travissbcl/strictmath/b9787e5/$(git rev-parse HEAD)/travissbcl
+  - wget http://frank.kank.net/travissbcl/strictmath/1ec361d/$(git rev-parse HEAD)/travissbcl
   - chmod +x travissbcl
 
 script:

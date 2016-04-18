@@ -11,9 +11,13 @@ cwd=$PWD
 mkdir -p tmp/deps/
 
 ( cd tmp/deps &&
-  tar zxf ../../deps/tarpit/cl-ppcre.tar.gz &&
+  tar zxf ../../deps/tarpit/ieee-floats-92e481a.tar.gz &&
   tar zxf ../../deps/tarpit/style-checker_0.1.tar.gz &&
+  tar zxf ../../deps/tarpit/docgen_0.1.tar.gz &&
+  tar zxf ../../deps/tarpit/cl-ppcre.tar.gz &&
   ln -s cl-ppcre-2.0.10/cl-ppcre.asd . &&
+  ln -s ieee-floats-current/ieee-floats.asd . &&
+  ln -s docgen_0.1/docgen.asd . &&
   ln -s style-checker_0.1/style-checker.asd .
 )
 
@@ -22,8 +26,10 @@ SBCL_HOME="" tmp/sbcl/bin/sbcl --core tmp/sbcl/lib/sbcl/sbcl.core --no-sysinit -
   --eval "(require 'asdf)" \
   --eval "(asdf:initialize-source-registry '(:source-registry (:tree \"${PWD}/tmp/deps\") :IGNORE-INHERITED-CONFIGURATION))" \
   --eval "(asdf:load-system :ieee-floats)" \
+  --eval "(asdf:load-system :cl-ppcre)" \
   --eval "(asdf:load-system :style-checker)" \
   --eval "(asdf:load-system :docgen)" \
+  --eval "(push :travis *features*)" \
   --eval "(asdf:clear-output-translations)" \
   --eval '(sb-ext:save-lisp-and-die "travissbcl" :executable t)' \
 
