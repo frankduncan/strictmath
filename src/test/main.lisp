@@ -38,3 +38,19 @@
        (= (strictmath:to-radians deg) expected-rad)
        (format t "** Expected ~A but got ~A for ~A? **~%" expected-rad (strictmath:to-radians deg) deg))))
     (with-open-file (str "resources/testfiles/toRadiansData" :direction :input) (read str))))))
+
+(deftest
+ "sin"
+ (lambda ()
+  (every
+   #'identity
+   (mapcar
+    (lambda (pair)
+     (destructuring-bind (deg expected-sin) pair
+      (or
+       (= (strictmath:sin (strictmath:to-radians deg)) expected-sin)
+       (format t "** Expected ~A but got ~A for ~A? **~%"
+        expected-sin
+        (strictmath:sin (strictmath:to-radians deg))
+        deg))))
+    (with-open-file (str "resources/testfiles/sinData" :direction :input) (read str))))))

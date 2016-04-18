@@ -1,5 +1,6 @@
 (defpackage #:strictmath (:use :common-lisp)
- (:export #:to-radians)
+ (:shadow #:sin)
+ (:export #:to-radians #:sin)
  (:documentation "Main strictmath package.
 
 Strictmath is a pure common lisp implementation of Java's StrictMath class,

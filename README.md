@@ -7,6 +7,7 @@ Pure common lisp implentation of Java's StrictMath class.  StrictMath is based o
 In the true "scratch an itch" category of software development, this library only does things as strictly needed by clnl in order to be consistent with regard to the JVM implementation of NetLogo.  Only the following things are implemented and tested:
 
 * Double precision only
+* Bounded to [0,360] or [0,2pi] only
 * The following StrictMath methods
   * sin
   * cos
