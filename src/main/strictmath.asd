@@ -5,9 +5,6 @@
  :author "Frank Duncan (frank@kank.com)"
  :components ((:file "package")
               (:file "base")
-              ;(:file "gen-float64-krem-pio2")
-              ;(:file "gen-float64-sign")
-              ;(:file "gen-float64-scale")
               (:file "rem-pio2")
               (:file "kcos")
               (:file "ksin")
