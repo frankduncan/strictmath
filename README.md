@@ -16,6 +16,10 @@ In the true "scratch an itch" category of software development, this library onl
 
 Anything else that works can be considered a pleasant surprise.
 
+## Usage
+
+See the [wiki](https://github.com/frankduncan/strictmath/wiki) for usage information.
+
 ## License
 
 This library lifts substantially from the evita-common-lisp implementation, as is noted in the LICENSE file.  Outside of that, functions are attempted ports of fdlibm functions, in as close as possible to a line for line translation.  As such, the files are similarly bound by the licenses included therein.

@@ -54,3 +54,19 @@
         (strictmath:sin (strictmath:to-radians deg))
         deg))))
     (with-open-file (str "resources/testfiles/sinData" :direction :input) (read str))))))
+
+(deftest
+ "cos"
+ (lambda ()
+  (every
+   #'identity
+   (mapcar
+    (lambda (pair)
+     (destructuring-bind (deg expected-cos) pair
+      (or
+       (= (strictmath:cos (strictmath:to-radians deg)) expected-cos)
+       (format t "** Expected ~A but got ~A for ~A? **~%"
+        expected-cos
+        (strictmath:cos (strictmath:to-radians deg))
+        deg))))
+    (with-open-file (str "resources/testfiles/cosData" :direction :input) (read str))))))

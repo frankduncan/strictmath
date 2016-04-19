@@ -12,7 +12,6 @@
               (:file "kcos")
               (:file "ksin")
               (:file "sin")
-              ;(:file "strict/gen-float64-cos")
-              )
+              (:file "cos"))
  :serial t
  :depends-on (#-travis :ieee-floats)) ; Don't load libraries for travis
